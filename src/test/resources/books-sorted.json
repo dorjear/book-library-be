@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "name": "book-name-one",
+    "author": "author-one",
+    "status": "Available"
+  },
+  {
+    "id": 4,
+    "name": "book-name-One",
+    "author": "author-one",
+    "status": "Available"
+  },
+  {
+    "id": 5,
+    "name": "Book-name-one",
+    "author": "author-one",
+    "status": "Available"
+  },
+  {
+    "id": 1,
+    "name": "book-name-three",
+    "author": "author-three",
+    "status": "Borrowed"
+  },
+  {
+    "id": 3,
+    "name": "New Book",
+    "author": "New Author",
+    "status": "Available"
+  }
+]
