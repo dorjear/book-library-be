@@ -4,9 +4,10 @@ import com.tonyking.sample.booklibrary.TestDatas;
 import com.tonyking.sample.booklibrary.model.Book;
 import com.tonyking.sample.booklibrary.repository.BookRepository;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 public class BookServiceTest {
 
     @Mock
