@@ -1,6 +1,6 @@
 # A Book Library backend service with Spring Boot and H2 Database
 
-This is a sample Book Library backend service with Spring Boot and H2 Database
+This is a sample Book Library backend service with Spring Boot and H2 Database.
 
 
 ## To run this Spring Boot application
@@ -21,4 +21,14 @@ User name: sa
 No password required for this sample. 
 
 ## Authentication
-This is the simple without authentication. The version with Oauth2 authentication is on branch feature/oauth2-demo  
+This version is an authenticated version.
+
+APIs are protected by oauth2 authentication. This server works as the resource server. 
+
+This is just a minimum version. Roles and access are not well handled yet. Error handling is not fine tuned yet.
+
+Client secrets are just hardcoded in the application.properties. In production secrets should be stored in a more secured environment. 
+
+The source code of the auth server is available at https://github.com/dorjear/oauth2-auth-server.
+
+Auth server need to be started before started this server.
