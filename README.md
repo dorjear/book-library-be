@@ -19,3 +19,6 @@ http://localhost:8080/h2-ui/
 JDBC URL: jdbc:h2:file:./book-library-db
 User name: sa
 No password required for this sample. 
+
+## Authentication
+This is the simple without authentication. The version with Oauth2 authentication is on branch feature/oauth2-demo  
