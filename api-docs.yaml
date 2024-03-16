@@ -6,6 +6,78 @@ servers:
 - url: http://localhost:8080
   description: Generated server url
 paths:
+  /api/book:
+    put:
+      tags:
+      - book-controller
+      operationId: updateBook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Book'
+    post:
+      tags:
+      - book-controller
+      operationId: createBook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Book'
+  /oauth/token:
+    get:
+      tags:
+      - token-controller
+      operationId: getAllBooks
+      parameters:
+      - name: code
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: redirectUrl
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /api/books:
+    get:
+      tags:
+      - book-controller
+      operationId: getAllBooks_1
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
   /api/book/{id}:
     get:
       tags:
@@ -18,30 +90,6 @@ paths:
         schema:
           type: integer
           format: int64
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Book'
-    put:
-      tags:
-      - book-controller
-      operationId: updateBook
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int64
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Book'
-        required: true
       responses:
         "200":
           description: OK
@@ -137,38 +185,6 @@ paths:
                 - 509 BANDWIDTH_LIMIT_EXCEEDED
                 - 510 NOT_EXTENDED
                 - 511 NETWORK_AUTHENTICATION_REQUIRED
-  /api/book:
-    post:
-      tags:
-      - book-controller
-      operationId: createBook
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Book'
-        required: true
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Book'
-  /api/books:
-    get:
-      tags:
-      - book-controller
-      operationId: getAllBooks
-      responses:
-        "200":
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Book'
 components:
   schemas:
     Book:
